@@ -1,0 +1,46 @@
+{
+  "environment": {
+    "start_url": "https://www.google.com",
+    "headless": false,
+    "time_limit": 500,
+    "observation_height": 84,
+    "observation_width": 84,
+    "render_mode": "rgb_array"
+  },
+  "data_collection": {
+    "sessions": 10,
+    "steps_per_session": 100,
+    "output_dir": "data",
+    "start_urls": [
+      "https://www.google.com",
+      "https://www.wikipedia.org",
+      "https://www.github.com",
+      "https://www.reddit.com",
+      "https://news.ycombinator.com"
+    ]
+  },
+  "data_processing": {
+    "data_dir": "data",
+    "output_dir": "data/processed",
+    "batch_size": 32,
+    "image_size": [224, 224]
+  },
+  "training": {
+    "algorithm": "PPO",
+    "policy": "CnnPolicy",
+    "total_timesteps": 100000,
+    "eval_freq": 10000,
+    "n_eval_episodes": 5,
+    "learning_rate": 0.0003,
+    "batch_size": 64,
+    "n_epochs": 10,
+    "gamma": 0.99,
+    "models_dir": "models"
+  },
+  "deployment": {
+    "max_steps": 200,
+    "model_path": "models/final_PPO_browser.zip",
+    "algorithm": "PPO",
+    "headless": false
+  }
+}
