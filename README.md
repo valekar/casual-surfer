@@ -26,7 +26,7 @@ This project implements a deep reinforcement learning (DRL) system that learns t
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/browser-rl.git
+git clone https://github.com/valekar/casual-surfer.git
 cd browser-rl
 ```
 
